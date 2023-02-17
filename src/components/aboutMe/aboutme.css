@@ -1,0 +1,19 @@
+.aboutMe-container {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  background-color: red;
+  top: 60px;
+  left: 2500px;
+  background: url("../../images/speech\ bubble.png");
+  background-size: cover;
+}
+
+.aboutMe-text {
+  position: absolute;
+  top: 65px;
+  left: 140px;
+  width: 60%;
+  font-size: 15px;
+  font-weight: bold;
+}

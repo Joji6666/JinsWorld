@@ -1,0 +1,12 @@
+.char {
+  position: absolute;
+  left: 200px;
+  top: 660px;
+  z-index: 10;
+  transition: left 0.25s ease;
+}
+
+.char #char {
+  width: 160px;
+  height: 130px;
+}
