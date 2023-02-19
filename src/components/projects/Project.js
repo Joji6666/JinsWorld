@@ -52,7 +52,7 @@ export const projects = [
     description:
       "현재 보고 계시는 웹 포트폴리오 사이트 입니다. Jins World를 구경하면서 개발자 김진의 대한 정보를 볼 수 있습니다.",
     github: "https://github.com/Joji6666/NewPortfolio",
-    youtube: "",
+    youtube: "https://youtu.be/OsVXpEQuiUc",
     notion:
       "https://playful-slice-f22.notion.site/Jins-World-4918ef87f9934ea1a0f8393fe000a75b",
     demolink: "https://new-portfolio-self.vercel.app/",
