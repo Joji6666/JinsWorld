@@ -1,6 +1,7 @@
 import broccolo1 from "../../images/thumbnail/broccoli1.png";
 import broccolo2 from "../../images/thumbnail/broccoli2.png";
 import r2day from "../../images/thumbnail/r2day.png";
+import jinsworld from "../../images/thumbnail/jinsworld.png";
 
 export const projects = [
   {
@@ -46,7 +47,7 @@ export const projects = [
     ],
   },
   {
-    thumbnail: "",
+    thumbnail: jinsworld,
     title: "Jins World",
     description:
       "현재 보고 계시는 웹 포트폴리오 사이트 입니다. Jins World를 구경하면서 개발자 김진의 대한 정보를 볼 수 있습니다.",
