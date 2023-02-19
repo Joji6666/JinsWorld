@@ -1,6 +1,7 @@
 ### 📃 프로젝트 소개
 
 - Jins World를 구경하면서 개발자 김진의 대하여 알아보세요!
+![jinsworldgif1](https://user-images.githubusercontent.com/115249840/219969025-bd985484-8e1b-4d66-94da-80c0b4c0398c.gif)
 
 ---
 
