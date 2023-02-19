@@ -1,0 +1,40 @@
+.contact-container {
+  position: absolute;
+  top: 80px;
+  left: 10500px;
+  scale: 0;
+  transition: scale 0.5s ease;
+}
+#contact-head {
+  margin: 0;
+  position: absolute;
+  top: 30px;
+  left: 10500px;
+  font-size: 64px;
+  font-family: serif;
+
+  background: -webkit-linear-gradient(yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-box {
+  background: url("../../images/contact.png");
+  width: 400px;
+  height: 500px;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-box div {
+  font-weight: bold;
+  font-family: fantasy;
+  font-size: 24px;
+}
+
+.contact-contents {
+  position: absolute;
+  top: 200px;
+  left: 50px;
+}

@@ -3,10 +3,25 @@
   width: 600px;
   height: 500px;
   background-color: red;
-  top: 60px;
-  left: 2500px;
+  top: 120px;
+  left: 2470px;
   background: url("../../images/speech\ bubble.png");
   background-size: cover;
+  scale: 0;
+  transition: scale 0.5s ease;
+}
+
+#about-head {
+  margin: 0;
+  position: absolute;
+  top: 60px;
+  left: 2470px;
+  font-size: 64px;
+  font-family: serif;
+
+  background: -webkit-linear-gradient(yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .aboutMe-text {

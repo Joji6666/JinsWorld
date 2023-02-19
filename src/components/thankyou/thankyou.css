@@ -1,0 +1,11 @@
+#thankyou {
+  position: absolute;
+  top: 60px;
+  left: 13300px;
+  font-size: 64px;
+  font-family: serif;
+  width: 500px;
+  background: -webkit-linear-gradient(yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

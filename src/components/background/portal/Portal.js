@@ -5,14 +5,43 @@ import "./portal.css";
 export default function Portal() {
   return (
     <>
-      <div className="project-portal">
-        <span>프로젝트 바로가기</span>
-        <img
-          style={{
-            width: "120px",
-          }}
-          src={portal}
-        />
+      <div className="portal-container">
+        <div className="project-portal">
+          <span>About Me</span>
+          <img
+            style={{
+              width: "120px",
+            }}
+            src={portal}
+          />
+        </div>
+        <div className="aboutMe-portal">
+          <span>Skills</span>
+          <img
+            style={{
+              width: "120px",
+            }}
+            src={portal}
+          />
+        </div>
+        <div className="skill-portal">
+          <span>Projects</span>
+          <img
+            style={{
+              width: "120px",
+            }}
+            src={portal}
+          />
+        </div>
+        <div className="contact-portal">
+          <span>Contact</span>
+          <img
+            style={{
+              width: "120px",
+            }}
+            src={portal}
+          />
+        </div>
       </div>
     </>
   );

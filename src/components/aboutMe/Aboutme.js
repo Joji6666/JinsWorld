@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useSelector } from "react-redux";
 import "./aboutme.css";
 
 export default function Aboutme() {
+  const { move } = useSelector((state) => state.move);
+  const aboutRef = useRef();
+
+  if (move >= 2200 && move <= 3700) {
+    setTimeout(() => {
+      aboutRef.current.style.scale = "1";
+    }, 500);
+  } else if (move >= 3960) {
+    aboutRef.current.style.scale = "0";
+  }
   return (
     <>
-      <div className="aboutMe-container">
+      <h1 id="about-head">Introduce</h1>
+      <div ref={aboutRef} className="aboutMe-container">
         <div className="aboutMe-text">
           <p>안녕하세요.</p>
           <p>프론트엔드 개발자 김진입니다.</p>

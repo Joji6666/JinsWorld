@@ -1,61 +1,103 @@
 .background {
-  width: 18000px;
+  width: 14000px;
   height: 100vh;
   background-image: url("../../images/background.png");
   overflow-x: scroll;
 }
+#jins-world-head {
+  font-size: 90px;
+  position: absolute;
+  top: 150px;
+  left: 550px;
+  z-index: 3;
+}
 
-#welcome {
+#guide-text {
+  width: 200px;
+}
+
+.tutorial {
+  scale: 0;
+  position: absolute;
+  top: 70px;
+  left: 500px;
+  width: 500px;
+  height: 500px;
+  background: url("../../images/contact.png");
+  background-size: 100% 100%;
+  transition: scale 0.5s ease;
+  z-index: 4;
+}
+
+.tutorial img {
+  position: absolute;
+  top: -5px;
+  left: 420px;
+  width: 80px;
+  cursor: pointer;
+}
+
+.tutorial-text {
+  width: 70%;
   position: absolute;
   top: 100px;
-  left: 550px;
+  left: 80px;
+  font-size: 18px;
+  font-family: fantasy;
+  display: flex;
+  flex-direction: column;
   font-weight: bold;
-  font-size: 90px;
-  color: red;
-  font-family: monospace;
-  -webkit-text-stroke: 2px black;
-}
-#jinsWorld {
-  position: absolute;
-  top: 180px;
-  left: 500px;
-  font-weight: bold;
-  font-size: 90px;
-  color: red;
-  font-family: monospace;
-  -webkit-text-stroke: 2px black;
 }
 
-.move-tutorial {
+.guidebook {
   position: absolute;
-  top: 300px;
-  left: 300px;
-  width: 300px;
-  height: 200px;
-  background-color: rgba(0, 0, 0, 0.5);
+  top: 600px;
+  left: 200px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
-.move-tutorial #how-move {
+.guidebook img {
+  width: 60px;
+  cursor: pointer;
+}
+
+.guidebook span {
+  color: red;
   font-size: 32px;
-  color: white;
-  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: fantasy;
+  animation-name: spin, depth;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
 }
 
-.move-tutorial #left-arrow {
-  font-size: 80px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: white;
-  margin: 5px;
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-360deg);
+  }
 }
-
-.move-tutorial #right-arrow {
-  font-size: 80px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: white;
-  margin: 5px;
+@keyframes depth {
+  0% {
+    text-shadow: 0 0 black;
+  }
+  25% {
+    text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black;
+  }
+  50% {
+    text-shadow: 0 0 black;
+  }
+  75% {
+    text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black,
+      -5px 0 black;
+  }
+  100% {
+    text-shadow: 0 0 black;
+  }
 }

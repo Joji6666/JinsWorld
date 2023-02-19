@@ -1,12 +1,42 @@
 .char {
   position: absolute;
   left: 200px;
-  top: 660px;
+  top: 630px;
   z-index: 10;
   transition: left 0.25s ease;
 }
 
 .char #char {
-  width: 160px;
-  height: 130px;
+  width: 150px;
+}
+.mobile-btn {
+  width: 300px;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 100px;
+  z-index: 13;
+}
+
+.btn-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-btn span {
+  font-size: 40px;
+  margin: 5px;
+  background-color: white;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  .mobile-btn {
+    display: block;
+  }
 }

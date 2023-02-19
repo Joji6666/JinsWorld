@@ -4,12 +4,43 @@
   flex-direction: column;
   position: absolute;
   top: 620px;
-  left: 1200px;
+  left: 400px;
   align-items: center;
 }
 
-.project-portal span {
+.portal-container span {
   font-size: 24px;
+  font-family: fantasy;
   color: white;
   font-weight: bold;
+}
+
+.aboutMe-portal {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 620px;
+  left: 600px;
+  align-items: center;
+}
+
+.skill-portal {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 620px;
+  left: 800px;
+  align-items: center;
+}
+
+.contact-portal {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 620px;
+  left: 1000px;
+  align-items: center;
 }
