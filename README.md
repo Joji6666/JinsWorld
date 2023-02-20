@@ -36,7 +36,7 @@
 
 ### 🔗 배포 URL
 
-[https://new-portfolio-self.vercel.app/](https://new-portfolio-self.vercel.app/)                                    
+https://jinsworld.vercel.app/                                   
 
 ---
 
