@@ -44,3 +44,33 @@
   left: 1000px;
   align-items: center;
 }
+
+.about-skill {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 620px;
+  left: 3000px;
+  align-items: center;
+}
+
+.skill-project {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 620px;
+  left: 6000px;
+  align-items: center;
+}
+
+.project-contact {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 620px;
+  left: 9000px;
+  align-items: center;
+}

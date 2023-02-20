@@ -30,6 +30,7 @@ export default function Char() {
 
       window.scrollTo({ left: move - 800, behavior: "smooth" });
       setCharImg(charRunLeft);
+      console.log(move);
 
       document.removeEventListener("keydown", handleArrowPress);
     } else if (event.keyCode === 39) {
@@ -38,12 +39,21 @@ export default function Char() {
 
       dispatch(setMove(move + 40));
       setCharImg(charRun);
-
+      console.log(move);
       window.scrollTo({ left: move - 800, behavior: "smooth" });
 
       document.removeEventListener("keydown", handleArrowPress);
     } else if (event.keyCode === 38) {
       if (move >= 800 && move <= 840) {
+        event.preventDefault();
+        dispatch(setMove(7300));
+        window.scrollTo({ left: 6500, behavior: "smooth" });
+        console.log("프로젝트 이동");
+      }
+    }
+
+    if (event.keyCode === 38) {
+      if (move >= 5980 && move <= 6030) {
         event.preventDefault();
         dispatch(setMove(7300));
         window.scrollTo({ left: 6500, behavior: "smooth" });
@@ -59,9 +69,25 @@ export default function Char() {
         console.log("연락 이동");
       }
     }
+    if (event.keyCode === 38) {
+      if (move >= 8980 && move <= 9030) {
+        event.preventDefault();
+        dispatch(setMove(10500));
+        window.scrollTo({ left: 9500, behavior: "smooth" });
+        console.log("연락 이동");
+      }
+    }
 
     if (event.keyCode === 38) {
       if (move >= 600 && move <= 640) {
+        event.preventDefault();
+        dispatch(setMove(4700));
+        window.scrollTo({ left: 4500, behavior: "smooth" });
+        console.log("스킬 이동");
+      }
+    }
+    if (event.keyCode === 38) {
+      if (move >= 3000 && move <= 3040) {
         event.preventDefault();
         dispatch(setMove(4700));
         window.scrollTo({ left: 4500, behavior: "smooth" });

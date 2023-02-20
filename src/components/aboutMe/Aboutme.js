@@ -6,7 +6,7 @@ export default function Aboutme() {
   const { move } = useSelector((state) => state.move);
   const aboutRef = useRef();
 
-  if (move >= 2200 && move <= 3700) {
+  if (move >= 2000 && move <= 3700) {
     setTimeout(() => {
       aboutRef.current.style.scale = "1";
     }, 500);

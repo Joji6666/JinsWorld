@@ -1,5 +1,6 @@
 import React from "react";
 import portal from "../../../images/portal/Portal004.gif";
+import portal2 from "../../../images/portal/portal.gif";
 import "./portal.css";
 
 export default function Portal() {
@@ -40,6 +41,33 @@ export default function Portal() {
               width: "120px",
             }}
             src={portal}
+          />
+        </div>
+        <div className="about-skill">
+          <span>Skill</span>
+          <img
+            style={{
+              width: "120px",
+            }}
+            src={portal2}
+          />
+        </div>
+        <div className="skill-project">
+          <span>Project</span>
+          <img
+            style={{
+              width: "120px",
+            }}
+            src={portal2}
+          />
+        </div>
+        <div className="project-contact">
+          <span>Contact</span>
+          <img
+            style={{
+              width: "120px",
+            }}
+            src={portal2}
           />
         </div>
       </div>

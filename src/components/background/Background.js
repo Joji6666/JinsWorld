@@ -16,17 +16,21 @@ import guidefont from "../../images/text.gif";
 export default function Background() {
   const tutorialRef = useRef();
 
+  useEffect(() => {
+    tutorialRef.current.style.scale = "1";
+  }, []);
+
   return (
     <>
       <div className="background">
-        <div className="guidebook">
+        <div
+          onClick={() => {
+            tutorialRef.current.style.scale = "1";
+          }}
+          className="guidebook"
+        >
           <img id="guide-text" src={guidefont} />
-          <img
-            onClick={() => {
-              tutorialRef.current.style.scale = "1";
-            }}
-            src={guidebook}
-          />
+          <img src={guidebook} />
         </div>
         <div ref={tutorialRef} className="tutorial">
           <img
@@ -38,15 +42,19 @@ export default function Background() {
           <div className="tutorial-text">
             <span>Jins World의 오신걸 환영합니다.</span>
             <span>키보드의 좌우 방향키를 입력하여 이동할 수 있습니다.</span>
+            <span>아래에 위치한 오브젝트들은 포탈입니다.</span>
             <span>
-              포탈에서는 키보드 상측 방향키를 입력하면 해당 구간으로 이동할 수
+              포탈에서는 키보드 상측 방향키를 입력하면 해당 영역으로 이동할 수
               있습니다.
             </span>
             <span>
               화면에 보이는 아이콘들을 클릭하시면 해당 링크페이지가 새로운 창에
               생성됩니다.
             </span>
-            <span>Z키를 입력하시면 처음 구간으로 이동할 수 있습니다.</span>
+            <span>Z키를 입력하시면 시작 지역으로 이동할 수 있습니다.</span>
+            <span>
+              가이드북을 닫고 다시보시려면 가이드북 이미지를 클릭해주세요!
+            </span>
           </div>
         </div>
         <div>
