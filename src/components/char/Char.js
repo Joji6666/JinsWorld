@@ -30,7 +30,6 @@ export default function Char() {
 
       window.scrollTo({ left: move - 800, behavior: "smooth" });
       setCharImg(charRunLeft);
-      console.log(move);
 
       document.removeEventListener("keydown", handleArrowPress);
     } else if (event.keyCode === 39) {
@@ -39,7 +38,7 @@ export default function Char() {
 
       dispatch(setMove(move + 40));
       setCharImg(charRun);
-      console.log(move);
+
       window.scrollTo({ left: move - 800, behavior: "smooth" });
 
       document.removeEventListener("keydown", handleArrowPress);
@@ -92,6 +91,14 @@ export default function Char() {
         dispatch(setMove(4700));
         window.scrollTo({ left: 4500, behavior: "smooth" });
         console.log("스킬 이동");
+      }
+    }
+
+    if (event.keyCode === 38) {
+      if (move >= 1240 && move <= 1280) {
+        event.preventDefault();
+        window.open("https://github.com/Joji6666", "_blank");
+        console.log("자기소개 이동");
       }
     }
 

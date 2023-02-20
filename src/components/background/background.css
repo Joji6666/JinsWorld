@@ -4,6 +4,11 @@
   background-image: url("../../images/background.png");
   overflow-x: scroll;
 }
+
+@font-face {
+  font-family: "GGothic60";
+  src: url("../../font/HGGGOTHICSSI_60G.TTF");
+}
 #jins-world-head {
   font-size: 90px;
   position: absolute;
@@ -42,13 +47,16 @@
   position: absolute;
   top: 100px;
   left: 80px;
-  font-size: 18px;
-  font-family: fantasy;
+  font-size: 19px;
+  font-family: "GGothic60";
   display: flex;
   flex-direction: column;
   font-weight: bold;
 }
 
+.tutorial-text span {
+  margin: 3px;
+}
 .guidebook {
   position: absolute;
   top: 600px;
@@ -74,6 +82,33 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-duration: 6s;
+}
+
+#tutorial-rightarrow {
+  position: absolute;
+  top: 36px;
+  left: 115px;
+  width: 32px;
+}
+
+#tutorial-leftarrow {
+  position: absolute;
+  top: 36px;
+  left: 90px;
+  width: 32px;
+}
+
+#tutorial-uparrow {
+  position: absolute;
+  top: 75px;
+  left: 120px;
+  width: 48px;
+}
+#zkey {
+  position: absolute;
+  top: 105px;
+  left: 200px;
+  width: 24px;
 }
 
 @keyframes spin {
