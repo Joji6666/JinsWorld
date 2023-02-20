@@ -36,7 +36,7 @@
 
 ### 🔗 배포 URL
 
-https://jinsworld.vercel.app/                                   
+https://jinsworld-36b90.web.app/                                  
 
 ---
 
