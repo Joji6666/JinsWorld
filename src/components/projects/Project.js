@@ -37,7 +37,7 @@ export const projects = [
     youtube: "https://youtu.be/xJiPBoktSf0",
     notion:
       "https://playful-slice-f22.notion.site/8616120187874f68a06edba911c8d038",
-    demolink: "https://ready-to-day.vercel.app/",
+    demolink: "https://ready-to-day.web.app/",
     tags: [
       "React",
       "Redux-toolkit",
@@ -55,7 +55,7 @@ export const projects = [
     youtube: "https://youtu.be/OsVXpEQuiUc",
     notion:
       "https://playful-slice-f22.notion.site/Jins-World-4918ef87f9934ea1a0f8393fe000a75b",
-    demolink: "https://jinsworld.vercel.app/",
+    demolink: "https://jinsworld-36b90.web.app/",
     tags: ["React"],
   },
 ];
