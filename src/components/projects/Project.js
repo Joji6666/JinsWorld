@@ -55,7 +55,7 @@ export const projects = [
     youtube: "https://youtu.be/OsVXpEQuiUc",
     notion:
       "https://playful-slice-f22.notion.site/Jins-World-4918ef87f9934ea1a0f8393fe000a75b",
-    demolink: "https://new-portfolio-self.vercel.app/",
+    demolink: "https://jinsworld.vercel.app/",
     tags: ["React"],
   },
 ];
