@@ -133,23 +133,34 @@ export default function Char() {
   document.addEventListener("keydown", handleArrowPress);
   document.addEventListener("keyup", keyUphandleArrowPress);
 
-  let intervalId = null;
+  //모바일 터치 이벤트
+  let touchStartX = 0;
 
-  function handleTouchStart() {
-    intervalId = setInterval(() => {
-      // 왼쪽으로 이동하는 코드
+  document.addEventListener("touchstart", handleTouchStart, false);
+  document.addEventListener("touchmove", handleTouchMove, false);
+
+  function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+  }
+
+  function handleTouchMove(event) {
+    event.preventDefault();
+
+    const touchMoveX = event.touches[0].clientX;
+    const touchDiffX = touchStartX - touchMoveX;
+
+    if (touchDiffX > 0) {
+      // 오른쪽으로 스와이프할 때 실행될 코드
+      dispatch(setMove(move + 40));
+      setCharImg(charRun);
+      window.scrollTo({ left: move - 800, behavior: "smooth" });
+    } else if (touchDiffX < 0) {
+      // 왼쪽으로 스와이프할 때 실행될 코드
       dispatch(setMove(move - 40));
       setCharImg(charRunLeft);
       window.scrollTo({ left: move - 800, behavior: "smooth" });
-    }, 100);
+    }
   }
-
-  function handleTouchEnd() {
-    clearInterval(intervalId);
-    // 이동을 멈추는 코드
-  }
-
-  //모바일 터치 이벤트
 
   return (
     <>
@@ -185,13 +196,7 @@ export default function Char() {
           >
             &#8593;
           </span>
-          <span
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-            className="left-arrow"
-          >
-            &#8592;
-          </span>
+          <span className="left-arrow">&#8592;</span>
           <span
             onClick={() => {
               dispatch(setMove(move + 40));
