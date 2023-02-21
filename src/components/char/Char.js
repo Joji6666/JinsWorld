@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import char from "../../images/hero.gif";
 import charRun from "../../images/herorun.gif";
 import charLeft from "../../images/heroleft.gif";
@@ -10,6 +10,7 @@ import { setMove } from "../../store";
 export default function Char() {
   const { move } = useSelector((state) => state.move);
   const charRef = useRef();
+  const intervalRef = useRef(null);
   const dispatch = useDispatch();
 
   const [charImg, setCharImg] = useState(char);
@@ -98,7 +99,6 @@ export default function Char() {
       if (move >= 1240 && move <= 1280) {
         event.preventDefault();
         window.open("https://github.com/Joji6666", "_blank");
-        console.log("자기소개 이동");
       }
     }
 
@@ -132,6 +132,8 @@ export default function Char() {
 
   document.addEventListener("keydown", handleArrowPress);
   document.addEventListener("keyup", keyUphandleArrowPress);
+
+  //모바일 터치 이벤트
 
   return (
     <>
@@ -168,11 +170,15 @@ export default function Char() {
             &#8593;
           </span>
           <span
-            onClick={() => {
+            ref={intervalRef}
+            onTouchStart={() => {
               dispatch(setMove(move - 40));
+              setCharImg(charRunLeft);
 
               window.scrollTo({ left: move - 100, behavior: "smooth" });
-              setCharImg(charRunLeft);
+            }}
+            onTouchEnd={() => {
+              setCharImg(charLeft);
             }}
             className="left-arrow"
           >
