@@ -138,6 +138,11 @@ export default function Char() {
 
   document.addEventListener("touchstart", handleTouchStart, false);
   document.addEventListener("touchmove", handleTouchMove, false);
+  document.addEventListener("touchend", handleTouchEnd, false);
+
+  function handleTouchEnd(event) {
+    setCharImg(charLeft);
+  }
 
   function handleTouchStart(event) {
     touchStartX = event.touches[0].clientX;
@@ -153,12 +158,12 @@ export default function Char() {
       // 오른쪽으로 스와이프할 때 실행될 코드
       dispatch(setMove(move + 40));
       setCharImg(charRun);
-      window.scrollTo({ left: move - 800, behavior: "smooth" });
+      window.scrollTo({ left: move - 100, behavior: "smooth" });
     } else if (touchDiffX < 0) {
       // 왼쪽으로 스와이프할 때 실행될 코드
       dispatch(setMove(move - 40));
       setCharImg(charRunLeft);
-      window.scrollTo({ left: move - 800, behavior: "smooth" });
+      window.scrollTo({ left: move - 100, behavior: "smooth" });
     }
   }
 
