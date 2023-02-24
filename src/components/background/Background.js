@@ -63,6 +63,12 @@ export default function Background() {
               화면에 보이는 아이콘들을 클릭하시면 해당 링크페이지가 새로운 창에
               생성됩니다.
             </span>
+            <span style={{ fontSize: "13px" }}>
+              전체 화면 플레이를 권장합니다.
+            </span>
+            <span style={{ fontSize: "13px" }}>
+              모바일 버전은 준비중입니다.
+            </span>
           </div>
         </div>
         <div>

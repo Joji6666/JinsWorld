@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import char from "../../images/hero.gif";
 import charRun from "../../images/herorun.gif";
 import charLeft from "../../images/heroleft.gif";
@@ -14,13 +14,6 @@ export default function Char() {
   const dispatch = useDispatch();
 
   const [charImg, setCharImg] = useState(char);
-  if (move > 13860) {
-    dispatch(setMove(0));
-    window.scrollTo({ left: 0, behavior: "smooth" });
-    setTimeout(() => {
-      window.location.reload();
-    }, 700);
-  }
 
   const handleArrowPress = (event) => {
     if (event.keyCode === 37) {
@@ -31,7 +24,7 @@ export default function Char() {
 
       window.scrollTo({ left: move - 800, behavior: "smooth" });
       setCharImg(charRunLeft);
-
+      console.log(move);
       document.removeEventListener("keydown", handleArrowPress);
     } else if (event.keyCode === 39) {
       // 오른쪽 화살표를 눌렀을 때 실행될 코드
@@ -39,7 +32,7 @@ export default function Char() {
 
       dispatch(setMove(move + 40));
       setCharImg(charRun);
-
+      console.log(move);
       window.scrollTo({ left: move - 800, behavior: "smooth" });
 
       document.removeEventListener("keydown", handleArrowPress);
@@ -49,6 +42,9 @@ export default function Char() {
         dispatch(setMove(7300));
         window.scrollTo({ left: 6500, behavior: "smooth" });
         console.log("프로젝트 이동");
+
+        // 이벤트 핸들러 등록 해제
+        document.removeEventListener("keydown", handleArrowPress);
       }
     }
 
@@ -58,6 +54,7 @@ export default function Char() {
         dispatch(setMove(7300));
         window.scrollTo({ left: 6500, behavior: "smooth" });
         console.log("프로젝트 이동");
+        document.removeEventListener("keydown", handleArrowPress);
       }
     }
 
@@ -67,6 +64,7 @@ export default function Char() {
         dispatch(setMove(10500));
         window.scrollTo({ left: 9500, behavior: "smooth" });
         console.log("연락 이동");
+        document.removeEventListener("keydown", handleArrowPress);
       }
     }
     if (event.keyCode === 38) {
@@ -75,6 +73,7 @@ export default function Char() {
         dispatch(setMove(10500));
         window.scrollTo({ left: 9500, behavior: "smooth" });
         console.log("연락 이동");
+        document.removeEventListener("keydown", handleArrowPress);
       }
     }
 
@@ -84,14 +83,16 @@ export default function Char() {
         dispatch(setMove(4700));
         window.scrollTo({ left: 4500, behavior: "smooth" });
         console.log("스킬 이동");
+        document.removeEventListener("keydown", handleArrowPress);
       }
     }
     if (event.keyCode === 38) {
-      if (move >= 3000 && move <= 3040) {
+      if (move >= 3200 && move <= 3240) {
         event.preventDefault();
         dispatch(setMove(4700));
         window.scrollTo({ left: 4500, behavior: "smooth" });
         console.log("스킬 이동");
+        document.removeEventListener("keydown", handleArrowPress);
       }
     }
 
@@ -108,6 +109,7 @@ export default function Char() {
         dispatch(setMove(2200));
         window.scrollTo({ left: 1600, behavior: "smooth" });
         console.log("자기소개 이동");
+        document.removeEventListener("keydown", handleArrowPress);
       }
     }
     if (event.keyCode === 90) {
@@ -115,10 +117,19 @@ export default function Char() {
       window.scrollTo({ left: 0, behavior: "smooth" });
       dispatch(setMove(0));
 
-      console.log("자기소개 이동");
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+      console.log("시작 지역 이동");
+      document.removeEventListener("keydown", handleArrowPress);
+    }
+
+    if (move > 13860) {
+      dispatch(setMove(0));
+      window.scrollTo({ left: 0, behavior: "smooth" });
+      document.removeEventListener("keydown", handleArrowPress);
+    }
+    if (move < -200) {
+      dispatch(setMove(0));
+      window.scrollTo({ left: 0, behavior: "smooth" });
+      document.removeEventListener("keydown", handleArrowPress);
     }
   };
 
@@ -133,44 +144,10 @@ export default function Char() {
   document.addEventListener("keydown", handleArrowPress);
   document.addEventListener("keyup", keyUphandleArrowPress);
 
-  //모바일 터치 이벤트
-  let touchStartX = 0;
-
-  document.addEventListener("touchstart", handleTouchStart, false);
-  document.addEventListener("touchmove", handleTouchMove, false);
-  document.addEventListener("touchend", handleTouchEnd, false);
-
-  function handleTouchEnd(event) {
-    setCharImg(charLeft);
-  }
-
-  function handleTouchStart(event) {
-    touchStartX = event.touches[0].clientX;
-  }
-
-  function handleTouchMove(event) {
-    event.preventDefault();
-
-    const touchMoveX = event.touches[0].clientX;
-    const touchDiffX = touchStartX - touchMoveX;
-
-    if (touchDiffX > 0) {
-      // 오른쪽으로 스와이프할 때 실행될 코드
-      dispatch(setMove(move + 40));
-      setCharImg(charRun);
-      window.scrollTo({ left: move - 100, behavior: "smooth" });
-    } else if (touchDiffX < 0) {
-      // 왼쪽으로 스와이프할 때 실행될 코드
-      dispatch(setMove(move - 40));
-      setCharImg(charRunLeft);
-      window.scrollTo({ left: move - 100, behavior: "smooth" });
-    }
-  }
-
   return (
     <>
-      <div className="char" style={{ left: `${move}px` }}>
-        <img ref={charRef} id="char" src={charImg} />
+      <div ref={charRef} className="char" style={{ left: `${move}px` }}>
+        <img id="char" src={charImg} />
       </div>
       <div className="mobile-btn">
         <div className="btn-box">

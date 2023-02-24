@@ -1,6 +1,5 @@
 .char {
   position: absolute;
-  left: 200px;
   top: 630px;
   z-index: 10;
   transition: left 0.25s ease;
