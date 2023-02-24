@@ -114,6 +114,9 @@ h1 {
   top: 170px;
   left: 507px;
 }
+.scale {
+  animation: scale 1s ease-in-out;
+}
 
 @keyframes scale {
   0% {

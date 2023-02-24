@@ -22,7 +22,6 @@ export default function Char() {
 
       dispatch(setMove(move - 40));
 
-      window.scrollTo({ left: move - 800, behavior: "smooth" });
       setCharImg(charRunLeft);
       console.log(move);
       document.removeEventListener("keydown", handleArrowPress);
@@ -33,14 +32,13 @@ export default function Char() {
       dispatch(setMove(move + 40));
       setCharImg(charRun);
       console.log(move);
-      window.scrollTo({ left: move - 800, behavior: "smooth" });
 
       document.removeEventListener("keydown", handleArrowPress);
     } else if (event.keyCode === 38) {
       if (move >= 800 && move <= 840) {
         event.preventDefault();
         dispatch(setMove(7300));
-        window.scrollTo({ left: 6500, behavior: "smooth" });
+
         console.log("프로젝트 이동");
 
         // 이벤트 핸들러 등록 해제
@@ -52,7 +50,7 @@ export default function Char() {
       if (move >= 5980 && move <= 6030) {
         event.preventDefault();
         dispatch(setMove(7300));
-        window.scrollTo({ left: 6500, behavior: "smooth" });
+
         console.log("프로젝트 이동");
         document.removeEventListener("keydown", handleArrowPress);
       }
@@ -62,7 +60,7 @@ export default function Char() {
       if (move >= 1000 && move <= 1040) {
         event.preventDefault();
         dispatch(setMove(10500));
-        window.scrollTo({ left: 9500, behavior: "smooth" });
+
         console.log("연락 이동");
         document.removeEventListener("keydown", handleArrowPress);
       }
@@ -71,7 +69,7 @@ export default function Char() {
       if (move >= 8980 && move <= 9030) {
         event.preventDefault();
         dispatch(setMove(10500));
-        window.scrollTo({ left: 9500, behavior: "smooth" });
+
         console.log("연락 이동");
         document.removeEventListener("keydown", handleArrowPress);
       }
@@ -81,7 +79,7 @@ export default function Char() {
       if (move >= 600 && move <= 640) {
         event.preventDefault();
         dispatch(setMove(4700));
-        window.scrollTo({ left: 4500, behavior: "smooth" });
+
         console.log("스킬 이동");
         document.removeEventListener("keydown", handleArrowPress);
       }
@@ -90,7 +88,7 @@ export default function Char() {
       if (move >= 3200 && move <= 3240) {
         event.preventDefault();
         dispatch(setMove(4700));
-        window.scrollTo({ left: 4500, behavior: "smooth" });
+
         console.log("스킬 이동");
         document.removeEventListener("keydown", handleArrowPress);
       }
@@ -107,7 +105,7 @@ export default function Char() {
       if (move >= 400 && move <= 460) {
         event.preventDefault();
         dispatch(setMove(2200));
-        window.scrollTo({ left: 1600, behavior: "smooth" });
+
         console.log("자기소개 이동");
         document.removeEventListener("keydown", handleArrowPress);
       }
@@ -143,6 +141,10 @@ export default function Char() {
 
   document.addEventListener("keydown", handleArrowPress);
   document.addEventListener("keyup", keyUphandleArrowPress);
+
+  useEffect(() => {
+    window.scrollTo({ left: move - 800, behavior: "smooth" });
+  }, [move]);
 
   return (
     <>
